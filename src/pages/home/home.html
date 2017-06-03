@@ -1,14 +1,19 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Next 5 Races
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-card inset *ngFor="let race of getNext" (click)="showRace(race.id)">
+      <ion-item>
+        <ion-icon item-left name="list-box"></ion-icon>
+          <h3>{{ race.raceName }}</h3>
+          <h5>{{ race.typeName }}</h5>
+          <h5>{{ race.endDate | amTimeAgo}}</h5>
+          <ion-icon name="arrow-forward" item-right></ion-icon>
+      </ion-item>
+  </ion-card>
 </ion-content>

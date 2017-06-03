@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Races Info Page
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card padding>
+    <button ion-button block (click)="showHome()">Show Next 5</button>
+  </ion-card>
+
+  <ion-card inset padding>
+    <ion-card inset padding>
+      <h1>{{ race?.raceName}}</h1>
+      <h4>{{race?.endDate}}</h4>
+      <h3>Bet Close: {{ race?.endDate | amTimeAgo}}</h3>
+    </ion-card>
+    <ion-card inset padding>
+      <h3>Race Location: {{ race?.locationName }}</h3>
+      <h3>Race type: {{ race?.typeName }}</h3>
+    </ion-card>
+  </ion-card>
+
+  <ion-card inset *ngFor="let competitor of race?.competitors" (click)="betLoader()">
+    <ion-item>
+      <ion-icon item-left name="contact"></ion-icon>
+      <h4>{{ competitor?.competitorName }}</h4>
+      <ion-icon name="arrow-forward" item-right></ion-icon>
+    </ion-item>
+  </ion-card>
+
+</ion-content>

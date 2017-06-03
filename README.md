@@ -1,26 +1,55 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+Test solution base on Angular | [Ionic](http://ionicframework.com/docs/) frameworks.
 
-## How to use this template
+## Demo
+If you have any difficulty to run it, please contact me by xsoroton@gmail.com
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
-
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
-
-### With the Ionic CLI:
-
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
-
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
+## How to run
+Install Node.js first if need it
+```
+https://nodejs.org/en/
+https://nodejs.org/en/download/package-manager/
 ```
 
-Then, to run it, cd into `myBlank` and run:
-
+Clone it and pull dependency.
+Note than: `npm install` may take about 5 min.
 ```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
+$ git clone https://github.com/xsoroton/next_race_test
+$ cd next_race_test
+$ npm install
 ```
 
-Substitute ios for android if not on a Mac.
+###### Run it browser `ionic serve` and navigate to server `http://localhost:8100/`
+```bash
+$ ionic serve
+```
 
+In case you want to run it on mobile device
+```bash
+$ ionic cordova platform add andorid
+$ ionic run android --device 
+```
+
+## Files to check
+
+#### Data
+###### would be better if you give access to your Sandbox API
+```bash
+./src/assets/data.json
+```
+
+#### Api service class
+```bash
+./src/providers/api-data-service.ts
+```
+
+#### Home page
+```bash
+./src/pages/home/home.ts
+./src/pages/home/home.html
+```
+
+#### Race page
+```bash
+./src/pages/race/race.ts
+./src/pages/race/race.html
+```
